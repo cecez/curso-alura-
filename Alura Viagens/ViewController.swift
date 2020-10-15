@@ -7,11 +7,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    // MARK: Atributos e Outlets
+    @IBOutlet weak var tabelaDeViagens: UITableView!
+    let listaDeViagens: [String] = ["Rio de Janeiro", "Porto Alegre", "Ceará"]
+    
+    // MARK: - UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listaDeViagens.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        cell.textLabel?.text = listaDeViagens[indexPath.row]
+    
+        return cell
+    }
+    
+    // MARK: LCV
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        self.tabelaDeViagens.dataSource = self
     }
 
 

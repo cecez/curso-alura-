@@ -11,7 +11,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     // MARK: Atributos e Outlets
     @IBOutlet weak var tabelaDeViagens: UITableView!
-    let listaDeViagens: [String] = ["Rio de Janeiro", "Porto Alegre", "Ceará"]
+    @IBOutlet weak var viewHoteis: UIButton!
+    @IBOutlet weak var viewPacotes: UIButton!
+    
+    let listaDeViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
     
     // MARK: - UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,7 +24,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = listaDeViagens[indexPath.row]
+        let viagemAtual = listaDeViagens[indexPath.row]
+        
+        cell.textLabel?.text = viagemAtual.titulo
     
         return cell
     }
@@ -31,6 +36,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         self.tabelaDeViagens.dataSource = self
+        
+        // arredondando view
+        self.viewHoteis.layer.cornerRadius = 10
+        self.viewPacotes.layer.cornerRadius = 10
     }
 
 

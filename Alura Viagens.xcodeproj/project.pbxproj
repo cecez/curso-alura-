@@ -15,6 +15,7 @@
 		2667743C2537A64200F05B68 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2667743A2537A64200F05B68 /* LaunchScreen.storyboard */; };
 		26EF5699253A552F00D12AEA /* Viagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF5698253A552F00D12AEA /* Viagem.swift */; };
 		26EF569C253A55F200D12AEA /* ViagemDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF569B253A55F200D12AEA /* ViagemDAO.swift */; };
+		26EF569F253E3C5B00D12AEA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF569E253E3C5B00D12AEA /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2667743D2537A64200F05B68 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26EF5698253A552F00D12AEA /* Viagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viagem.swift; sourceTree = "<group>"; };
 		26EF569B253A55F200D12AEA /* ViagemDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViagemDAO.swift; path = "../../../../../../Downloads/Arquivos Projeto/ViagemDAO.swift"; sourceTree = "<group>"; };
+		26EF569E253E3C5B00D12AEA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				2667742F2537A63E00F05B68 /* AppDelegate.swift */,
 				266774312537A63E00F05B68 /* SceneDelegate.swift */,
+				26EF569E253E3C5B00D12AEA /* TableViewCell.swift */,
 				26EF5698253A552F00D12AEA /* Viagem.swift */,
 				26EF569B253A55F200D12AEA /* ViagemDAO.swift */,
 				266774332537A63E00F05B68 /* ViewController.swift */,
@@ -146,6 +149,7 @@
 				26EF5699253A552F00D12AEA /* Viagem.swift in Sources */,
 				26EF569C253A55F200D12AEA /* ViagemDAO.swift in Sources */,
 				266774342537A63E00F05B68 /* ViewController.swift in Sources */,
+				26EF569F253E3C5B00D12AEA /* TableViewCell.swift in Sources */,
 				266774302537A63E00F05B68 /* AppDelegate.swift in Sources */,
 				266774322537A63E00F05B68 /* SceneDelegate.swift in Sources */,
 			);

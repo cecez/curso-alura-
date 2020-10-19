@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Atributos e Outlets
     @IBOutlet weak var tabelaDeViagens: UITableView!
@@ -22,13 +22,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         
         let viagemAtual = listaDeViagens[indexPath.row]
         
-        cell.textLabel?.text = viagemAtual.titulo
-    
+        cell.labelTitulo.text           = viagemAtual.titulo
+        cell.labelQuantidadeDeDias.text = "\(viagemAtual.quantidadeDeDias) dias"
+        cell.labelPreco.text            = viagemAtual.preco
+        cell.imagemViagem.image         = UIImage(named: viagemAtual.caminhoDaImagem)
+        
         return cell
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 175;
     }
     
     // MARK: LCV
@@ -36,6 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         
         self.tabelaDeViagens.dataSource = self
+        self.tabelaDeViagens.delegate   = self
         
         // arredondando view
         self.viewHoteis.layer.cornerRadius = 10

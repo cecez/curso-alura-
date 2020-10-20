@@ -26,10 +26,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let viagemAtual = listaDeViagens[indexPath.row]
         
-        cell.labelTitulo.text           = viagemAtual.titulo
-        cell.labelQuantidadeDeDias.text = "\(viagemAtual.quantidadeDeDias) dias"
-        cell.labelPreco.text            = viagemAtual.preco
-        cell.imagemViagem.image         = UIImage(named: viagemAtual.caminhoDaImagem)
+        cell.labelTitulo.text                   = viagemAtual.titulo
+        cell.labelQuantidadeDeDias.text         = "\(viagemAtual.quantidadeDeDias) dias"
+        cell.labelPreco.text                    = viagemAtual.preco
+        cell.imagemViagem.image                 = UIImage(named: viagemAtual.caminhoDaImagem)
+        cell.imagemViagem.layer.cornerRadius    = 10
+        cell.imagemViagem.layer.masksToBounds   = true
         
         return cell
     }

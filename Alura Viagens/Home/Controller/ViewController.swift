@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         cell.labelTitulo.text                   = viagemAtual.titulo
         cell.labelQuantidadeDeDias.text         = "\(viagemAtual.quantidadeDeDias) dias"
-        cell.labelPreco.text                    = viagemAtual.preco
+        cell.labelPreco.text                    = "R$ \(viagemAtual.preco)"
         cell.imagemViagem.image                 = UIImage(named: viagemAtual.caminhoDaImagem)
         cell.imagemViagem.layer.cornerRadius    = 10
         cell.imagemViagem.layer.masksToBounds   = true
@@ -38,7 +38,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 175;
+        
+        // testa se dispositivo é telefone
+        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 175 : 260;
     }
     
     // MARK: LCV

@@ -19,6 +19,8 @@
 		26BCD54C253F94AE00715029 /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BCD547253F94AE00715029 /* img3.jpg */; };
 		26BCD54D253F94AE00715029 /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 26BCD548253F94AE00715029 /* img2.jpg */; };
 		26BCD54E253F94AE00715029 /* img11.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BCD549253F94AE00715029 /* img11.png */; };
+		26C0A7EB254A24E400B8F333 /* PacotesViagensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0A7EA254A24E400B8F333 /* PacotesViagensViewController.swift */; };
+		26C0A7EF254A268800B8F333 /* PacoteViagemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C0A7EE254A268800B8F333 /* PacoteViagemCollectionViewCell.swift */; };
 		26EF5699253A552F00D12AEA /* Viagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF5698253A552F00D12AEA /* Viagem.swift */; };
 		26EF569F253E3C5B00D12AEA /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EF569E253E3C5B00D12AEA /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		26BCD547253F94AE00715029 /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img3.jpg; sourceTree = "<group>"; };
 		26BCD548253F94AE00715029 /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
 		26BCD549253F94AE00715029 /* img11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img11.png; sourceTree = "<group>"; };
+		26C0A7EA254A24E400B8F333 /* PacotesViagensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacotesViagensViewController.swift; sourceTree = "<group>"; };
+		26C0A7EE254A268800B8F333 /* PacoteViagemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacoteViagemCollectionViewCell.swift; sourceTree = "<group>"; };
 		26EF5698253A552F00D12AEA /* Viagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viagem.swift; sourceTree = "<group>"; };
 		26EF569E253E3C5B00D12AEA /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,7 @@
 				2667742F2537A63E00F05B68 /* AppDelegate.swift */,
 				26BCD53A253F8F0600715029 /* Model */,
 				26BCD53B253F8F1D00715029 /* Home */,
+				26C0A7E7254A247300B8F333 /* Pacotes */,
 				26BCD53E253F8F5000715029 /* ViagemDAO */,
 				266774352537A63E00F05B68 /* Main.storyboard */,
 				266774312537A63E00F05B68 /* SceneDelegate.swift */,
@@ -137,6 +142,31 @@
 				26BCD549253F94AE00715029 /* img11.png */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		26C0A7E7254A247300B8F333 /* Pacotes */ = {
+			isa = PBXGroup;
+			children = (
+				26C0A7E8254A249600B8F333 /* Controller */,
+				26C0A7E9254A249D00B8F333 /* View */,
+			);
+			path = Pacotes;
+			sourceTree = "<group>";
+		};
+		26C0A7E8254A249600B8F333 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				26C0A7EA254A24E400B8F333 /* PacotesViagensViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		26C0A7E9254A249D00B8F333 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26C0A7EE254A268800B8F333 /* PacoteViagemCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +244,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C0A7EB254A24E400B8F333 /* PacotesViagensViewController.swift in Sources */,
 				26EF5699253A552F00D12AEA /* Viagem.swift in Sources */,
 				266774342537A63E00F05B68 /* ViewController.swift in Sources */,
+				26C0A7EF254A268800B8F333 /* PacoteViagemCollectionViewCell.swift in Sources */,
 				26EF569F253E3C5B00D12AEA /* TableViewCell.swift in Sources */,
 				26BCD541253F911E00715029 /* ViagemDAO.swift in Sources */,
 				266774302537A63E00F05B68 /* AppDelegate.swift in Sources */,

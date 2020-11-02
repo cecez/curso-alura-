@@ -13,6 +13,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     let listaDeViagens: [Viagem] = ViagemDAO().retornaTodasAsViagens()
 
     // MARK: IBOutlet
+    @IBOutlet weak var pesquisarViagens: UISearchBar!
     @IBOutlet weak var colecaoPacotesViagem: UICollectionView!
     
     

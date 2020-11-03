@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
+class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     // MARK: Dados
     let listaComTodasViagens: [Viagem]  = ViagemDAO().retornaTodasAsViagens()
@@ -58,6 +58,14 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         
         return celula
+    }
+    
+    // MARK: UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: "detalhesViagem") as! DetalhesViagemViewController
+        
+        self.present(controller, animated: true, completion: nil)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout

@@ -10,8 +10,8 @@ import UIKit
 class PacotesViagensViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     // MARK: Dados
-    let listaComTodasViagens: [Viagem]  = ViagemDAO().retornaTodasAsViagens()
-    var listaDeViagens: [Viagem]        = []
+    let listaComTodasViagens: [PacoteViagem]  = PacoteViagemDAO().retornaTodasAsViagens()
+    var listaDeViagens: [PacoteViagem]        = []
     
     // MARK: IBOutlet
     @IBOutlet weak var pesquisarViagens: UISearchBar!
@@ -42,14 +42,14 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let viagemAtual = listaDeViagens[indexPath.item]
+        let pacoteViagem = listaDeViagens[indexPath.item]
         
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
                 
-        celula.labelTitulo.text                   = viagemAtual.titulo
-        celula.labelQuantidadeDias.text           = "\(viagemAtual.quantidadeDeDias) dias"
-        celula.labelPreco.text                    = "R$ \(viagemAtual.preco)"
-        celula.imagemViagem.image                 = UIImage(named: viagemAtual.caminhoDaImagem)
+        celula.labelTitulo.text                   = pacoteViagem.viagem.titulo
+        celula.labelQuantidadeDias.text           = "\(pacoteViagem.viagem.quantidadeDeDias) dias"
+        celula.labelPreco.text                    = "R$ \(pacoteViagem.viagem.preco)"
+        celula.imagemViagem.image                 = UIImage(named: pacoteViagem.viagem.caminhoDaImagem)
         
         // borda do item
         celula.layer.borderWidth = 0.5
@@ -81,9 +81,9 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         // se houver pesquisa, faz filtragem
         if (searchText != "") {
-            let filtroListaViagem       = NSPredicate(format: "titulo contains %@", searchText)
-            let listaFiltrada: [Viagem] = (listaDeViagens as NSArray).filtered(using: filtroListaViagem) as! Array
-            listaDeViagens              = listaFiltrada
+            let filtroListaViagem               = NSPredicate(format: "titulo contains %@", searchText)
+            let listaFiltrada: [PacoteViagem]   = (listaDeViagens as NSArray).filtered(using: filtroListaViagem) as! Array
+            listaDeViagens                      = listaFiltrada
         }
         
         // atualiza label

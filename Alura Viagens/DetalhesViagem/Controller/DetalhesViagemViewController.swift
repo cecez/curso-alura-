@@ -8,14 +8,37 @@
 import UIKit
 
 class DetalhesViagemViewController: UIViewController {
-
+    
+    // MARK: IBOUtlet e IBAction
+    @IBOutlet weak var imagemPacoteViagem: UIImageView!
+    @IBOutlet weak var labelTituloPacoteViagem: UILabel!
+    @IBOutlet weak var labelDescricaoPacoteViagem: UILabel!
+    @IBOutlet weak var labelDataViagem: UILabel!
+    @IBOutlet weak var labelPrecoPacoteViagem: UILabel!
+    
+    @IBAction func voltar(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    var pacoteSelecionado: PacoteViagem? = nil
+    
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let pacote = pacoteSelecionado {
+            self.imagemPacoteViagem.image           = UIImage(named: pacote.viagem.caminhoDaImagem)
+            self.labelTituloPacoteViagem.text       = pacote.viagem.titulo
+            self.labelDescricaoPacoteViagem.text    = pacote.descricao
+            self.labelDataViagem.text               = pacote.dataViagem
+            self.labelPrecoPacoteViagem.text        = pacote.viagem.preco
+            
+        }
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 

@@ -67,7 +67,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         let controller  = storyboard.instantiateViewController(identifier: "detalhesViagens") as! DetalhesViagensViewController
         
         // envia pacote selecionado ao próximo view controller
-        //controller.pacoteSelecionado = pacote
+        controller.pacoteSelecionado = pacote
         
         self.present(controller, animated: true, completion: nil)
     }

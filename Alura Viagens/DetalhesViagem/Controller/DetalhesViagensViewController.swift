@@ -25,11 +25,11 @@ class DetalhesViagensViewController: UIViewController {
         super.viewDidLoad()
 
         if let pacote = pacoteSelecionado {
-            self.imagemPacoteViagem.image = UIImage(named: pacote.viagem.caminhoDaImagem)
-            self.labelTituloPacoteViagem.text = pacote.viagem.titulo
-            self.labelDescricaoPacoteViagem.text = pacote.descricao
-            self.labelDataViagem.text = pacote.dataViagem
-            self.labelPrecoPacoteViagem.text = pacote.viagem.preco
+            self.imagemPacoteViagem.image           = UIImage(named: pacote.viagem.caminhoDaImagem)
+            self.labelTituloPacoteViagem.text       = pacote.viagem.titulo
+            self.labelDescricaoPacoteViagem.text    = pacote.descricao
+            self.labelDataViagem.text               = pacote.dataViagem
+            self.labelPrecoPacoteViagem.text        = pacote.viagem.preco
         }
     }
     

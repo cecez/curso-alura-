@@ -26,6 +26,8 @@ class DetalhesViagemViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("carregou 2");
 
         if let pacote = pacoteSelecionado {
             self.imagemPacoteViagem.image           = UIImage(named: pacote.viagem.caminhoDaImagem)

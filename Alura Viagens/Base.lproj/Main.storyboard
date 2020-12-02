@@ -541,22 +541,25 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sUx-Rq-E3s">
                                                         <rect key="frame" x="0.0" y="0.0" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfd-OW-YKG">
                                                         <rect key="frame" x="0.0" y="39" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="data de validade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kw9-zN-Pt8">
                                                         <rect key="frame" x="0.0" y="78" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                        <connections>
+                                                            <action selector="textFieldEntrouFoco:" destination="ywz-Jh-uH9" eventType="editingDidBegin" id="8Jk-Xh-KBd"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="código de segurança" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cha-VU-joi">
                                                         <rect key="frame" x="0.0" y="117" width="355" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQL-ES-xa4">
                                                         <rect key="frame" x="0.0" y="156" width="355" height="30"/>
@@ -608,6 +611,7 @@
                         <outlet property="labelPrecoPacoteViagem" destination="5uO-Sy-joE" id="IGC-Eq-yW6"/>
                         <outlet property="labelTituloPacoteViagem" destination="eth-ww-Cz1" id="0iH-9z-J8c"/>
                         <outlet property="scrollPrincipal" destination="OzX-oU-vwa" id="cfs-r6-Vkx"/>
+                        <outlet property="textFieldData" destination="kw9-zN-Pt8" id="mGJ-52-6ys"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-cS-BGX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

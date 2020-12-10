@@ -23,7 +23,7 @@ class DetalhesViagensViewController: UIViewController {
     
     // MARK: IBActions
     @IBAction func botaoVoltar(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func textFieldEntrouFoco(_ sender: UITextField) {
@@ -44,7 +44,7 @@ class DetalhesViagensViewController: UIViewController {
         
         controller.pacoteComprado = pacoteSelecionado
         
-        self.present(controller, animated: true, completion: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: LC

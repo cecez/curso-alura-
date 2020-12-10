@@ -69,7 +69,8 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         // envia pacote selecionado ao próximo view controller
         controller.pacoteSelecionado = pacote
         
-        self.present(controller, animated: true, completion: nil)
+        // chama viewcontroller através do navigation controller
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: UICollectionViewDelegateFlowLayout
@@ -85,7 +86,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         // se houver pesquisa, faz filtragem
         if (searchText != "") {
-            let filtroListaViagem               = NSPredicate(format: "titulo contains %@", searchText)
+            let filtroListaViagem               = NSPredicate(format: "titulo contains %@", searchText) // TODO corrigir
             let listaFiltrada: [PacoteViagem]   = (listaDeViagens as NSArray).filtered(using: filtroListaViagem) as! Array
             listaDeViagens                      = listaFiltrada
         }

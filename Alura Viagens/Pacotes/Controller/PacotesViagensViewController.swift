@@ -46,16 +46,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "celulaPacote", for: indexPath) as! PacoteViagemCollectionViewCell
                 
-        celula.labelTitulo.text                   = pacoteViagem.viagem.titulo
-        celula.labelQuantidadeDias.text           = "\(pacoteViagem.viagem.quantidadeDeDias) dias"
-        celula.labelPreco.text                    = "R$ \(pacoteViagem.viagem.preco)"
-        celula.imagemViagem.image                 = UIImage(named: pacoteViagem.viagem.caminhoDaImagem)
-        
-        // borda do item
-        celula.layer.borderWidth = 0.5
-        celula.layer.borderColor = UIColor(red: 85.0/255.0, green: 85.0/255.0, blue: 85.0/255.0, alpha: 1).cgColor
-        celula.layer.cornerRadius = 8
-        
+        celula.configuraCelular(pacote: pacoteViagem)
         
         return celula
     }
@@ -86,9 +77,7 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
         
         // se houver pesquisa, faz filtragem
         if (searchText != "") {
-            let filtroListaViagem               = NSPredicate(format: "titulo contains %@", searchText) // TODO corrigir
-            let listaFiltrada: [PacoteViagem]   = (listaDeViagens as NSArray).filtered(using: filtroListaViagem) as! Array
-            listaDeViagens                      = listaFiltrada
+            listaDeViagens = listaDeViagens.filter({ $0.viagem.titulo.contains(searchText) })
         }
         
         // atualiza label

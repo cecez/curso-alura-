@@ -66,7 +66,16 @@ class PacotesViagensViewController: UIViewController, UICollectionViewDataSource
     
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width / 2) - 15, height: 160)
+        
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            // iPhones (2 colunas)
+            return CGSize(width: (collectionView.bounds.width / 2) - 20, height: 160)
+        } else {
+            // iPad e outros (3 colunas)
+            return CGSize(width: (collectionView.bounds.width / 3) - 20, height: 250)
+        }
+        
+        
     }
     
     // MARK: UISearchBarDelegate
